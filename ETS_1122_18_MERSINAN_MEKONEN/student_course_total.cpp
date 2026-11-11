@@ -25,7 +25,6 @@ Output:
 - Course total (one decimal place)
 - Pass or Fail
 
-
 */
 
 // THE PROGRAM
@@ -48,6 +47,7 @@ int main() {
     double assignmentMark, midtermMark, finalMark, courseTotal;
 
     // 3. Input: Ask the user and store their responses.
+   
     cout << "Enter assignment mark: ";
   
     cin >> assignmentMark;
