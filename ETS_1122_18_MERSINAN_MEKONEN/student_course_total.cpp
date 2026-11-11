@@ -1,6 +1,6 @@
 /*
 
-Student Course Mark Total Calculator
+THE C++ PROGRAM THAT CALCULATES STUDENT MARK AND STATUS
 
 Input:
 
@@ -28,7 +28,7 @@ Output:
 
 */
 
-
+// THE PROGRAM
 
 #include <iostream>
 #include <iomanip> // Required for output formatting (fixed, setprecision)
