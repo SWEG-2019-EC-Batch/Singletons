@@ -12,12 +12,14 @@ Input:
 
 Process:
 
-1. Read the distance, travel time in hours and minutes, fuel consumption, and price per liter.
-2. Convert the travel time from hours and minutes into total hours.
-3. Calculate the average speed by dividing the distance by the total travel time in hours.
-4. Calculate the amount of fuel used based on the distance and the car's fuel consumption in liters per 100 km.
-5. Calculate the fuel cost by multiplying the fuel used by the price per liter.
-6. Display the average speed, fuel used, and fuel cost, each to two decimal places.
+1. Start the program
+2. Read the distance, travel time in hours and minutes, fuel consumption, and price per liter.
+3. Convert the travel time from hours and minutes into total hours.
+4. Calculate the average speed by dividing the distance by the total travel time in hours.
+5. Calculate the amount of fuel used based on the distance and the car's fuel consumption in liters per 100 km.
+6. Calculate the fuel cost by multiplying the fuel used by the price per liter.
+7. Display the average speed, fuel used, and fuel cost, each to two decimal places.
+8. End the program
 
 Output:
 
