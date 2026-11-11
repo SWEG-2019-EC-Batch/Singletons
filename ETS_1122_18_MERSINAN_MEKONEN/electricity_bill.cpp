@@ -7,12 +7,13 @@ Input:
 - Electricity units used in a month (kWh)
 
 Process:
-
-1. Read the number of electricity units used.
-2. Calculate the energy charge using 1.50 birr per unit for the first 50 units and 2.00 birr per unit for every unit above 50.
-3. Add the fixed service charge of 10 birr.
-4. Calculate the total bill by adding the energy charge and the service charge.
-5. Display the energy charge, service charge, and total bill to two decimal places.
+1. Start the program
+2. Read the number of electricity units used.
+3. Calculate the energy charge using 1.50 birr per unit for the first 50 units and 2.00 birr per unit for every unit above 50.
+4. Add the fixed service charge of 10 birr.
+5. Calculate the total bill by adding the energy charge and the service charge.
+6. Display the energy charge, service charge, and total bill to two decimal places.
+7.End the program
 
 Output:
 
