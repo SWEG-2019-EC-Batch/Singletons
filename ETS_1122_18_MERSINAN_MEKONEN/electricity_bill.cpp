@@ -13,7 +13,7 @@ Process:
 4. Add the fixed service charge of 10 birr.
 5. Calculate the total bill by adding the energy charge and the service charge.
 6. Display the energy charge, service charge, and total bill to two decimal places.
-7.End the program
+7. End the program
 
 Output:
 
