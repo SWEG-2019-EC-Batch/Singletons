@@ -7,6 +7,7 @@ Input:
 - Electricity units used in a month (kWh)
 
 Process:
+
 1. Start the program
 2. Read the number of electricity units used.
 3. Calculate the energy charge using 1.50 birr per unit for the first 50 units and 2.00 birr per unit for every unit above 50.
