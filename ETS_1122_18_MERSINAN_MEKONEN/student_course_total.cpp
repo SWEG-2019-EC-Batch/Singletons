@@ -10,15 +10,17 @@ Input:
 
 Process:
 
-1. Read the assignment, midterm, and final marks.
-2. Calculate 20% of the assignment mark.
-3. Calculate 30% of the midterm mark.
-4. Calculate 50% of the final mark.
-5. Add the three weighted marks to obtain the course total.
-6. Compare the course total with the pass mark (50).
-7. Determine Pass if the total is greater than or equal to 50;
+1. Start the program
+2. Read the assignment, midterm, and final marks.
+3. Calculate 20% of the assignment mark.
+4. Calculate 30% of the midterm mark.
+5. Calculate 50% of the final mark.
+6. Add the three weighted marks to obtain the course total.
+7. Compare the course total with the pass mark (50).
+8. Determine Pass if the total is greater than or equal to 50;
    otherwise, determine Fail.
-8. Display the course total to one decimal place.
+9. Display the course total to one decimal place.
+10. End the program
 
 Output:
 
