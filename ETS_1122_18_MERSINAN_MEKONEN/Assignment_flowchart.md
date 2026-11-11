@@ -7,7 +7,7 @@ This document contains the flowcharts for the three C++ programming assignments.
 
 ```mermaid
 
-graph TD (Graph Top-Down)
+graph TD 
 
     A([Start]) --> B[/Input: distance, hours, minutes, fuel_rate, price/]
 
@@ -27,7 +27,7 @@ graph TD (Graph Top-Down)
 
 ```mermaid
 
-graph TD (Graph Top-Down)
+graph TD 
 
     A([Start]) --> B[/Input: units/]
 
@@ -49,7 +49,7 @@ graph TD (Graph Top-Down)
 
 ```mermaid
 
-graph TD (Graph Top-Down)
+graph TD 
 
     A([Start]) --> B[/Input: assignment, project, midterm, final/]
 
