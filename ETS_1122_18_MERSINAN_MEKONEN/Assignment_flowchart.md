@@ -4,7 +4,6 @@
 This document contains the flowcharts for the three C++ programming assignments.
 
 ## 1. Trip Speed and Fuel Cost (trip_speed_fuel_cost.cpp)
-
 ```mermaid
 
 graph TD 
@@ -22,6 +21,8 @@ graph TD
     F --> G[/Output: average_speed, fuel_used, total_cost/]
 
     G --> H([End])
+
+```
 
 ## 2. Monthly Electricity Bill (electricity_bill.cpp)
 
@@ -45,6 +46,8 @@ graph TD
 
     G --> H([End])
 
+```
+
 ## 3. Student Course Total (student_course_total.cpp)
 
 ```mermaid
@@ -58,3 +61,5 @@ graph TD
     C --> D[/Output: total_mark/]
 
     D --> E([End])
+
+```
