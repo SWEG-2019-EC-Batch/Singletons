@@ -1,0 +1,221 @@
+# Input
+    1. Worker type (1 for Employee, 2 for Laborer)
+    2. For Employee:
+        - Base salary
+        - Number of hours worked in a week
+        - Bonus rate per hour
+    3. For Laborer:
+        - Number of hours worked
+        - Hourly rate
+        - Machinery damage status (Yes/No) and penalty amount (if Yes)
+        - Bonus status (Yes/No) and bonus amount (if no damage and Yes)
+    4. Output menu choice (1 to 7)
+
+
+    #OUtput
+
+    # Output
+    1. Gross salary
+    2. Bonus payment
+    3. Penalty
+    4. Tax deduction
+    5. Pension
+    6. Net salary
+
+    # Process
+    - Check worker type and calculate gross salary, bonus, penalty, and net salary.
+    - Apply tax and 7% pension deductions for employees only.
+    - Display the requested result(s) using a switch statement.
+
+
+
+*/
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Shared variables
+    int worker_type, choose;
+    double worked_hr = 0.0;
+    double gross_salary = 0.0;
+    double bonus_payment = 0.0;
+    double tax_deduction = 0.0;
+    double pension = 0.0;
+    double penalty = 0.0;
+    double net_salary = 0.0;
+
+    // Employee-specific variables
+    double base_salary = 0.0;
+    double bonus_rate = 0.0;
+    double tax_rate = 0.0;
+    const double pension_rate = 0.07;
+    const int expected_hr = 40;
+
+    // Laborer-specific variables
+    double hourly_rate = 0.0;
+    int has_bonus = 0;
+    int has_damage = 0;
+
+    // Step 1: Ask for worker type
+    cout << "Select Worker Type:" << endl;
+    cout << "1. Employee" << endl;
+    cout << "2. Laborer" << endl;
+    cout << "Enter your choice: ";
+    cin >> worker_type;
+
+    if (worker_type == 1)
+    {
+        // --- EMPLOYEE SECTION ---
+        cout << "Enter your base salary: ";
+        cin >> base_salary;
+        cout << "Enter the number of hours worked in a week: ";
+        cin >> worked_hr;
+        cout << "Enter the bonus rate per hour: ";
+        cin >> bonus_rate;
+
+        if (worked_hr > expected_hr)
+        {
+            bonus_payment = (worked_hr - expected_hr) * bonus_rate;
+        }
+        else if (worked_hr < expected_hr)
+        {
+            penalty = (expected_hr - worked_hr) * (base_salary / expected_hr);
+        }
+        else
+        {
+            bonus_payment = 0;
+            penalty = 0;
+        }
+
+        gross_salary = (base_salary + bonus_payment) - penalty;
+
+        // Tax calculation
+        if (gross_salary >= 0 && gross_salary <= 3500)
+        {
+            tax_rate = 0;
+        }
+        else if (gross_salary > 3500 && gross_salary <= 10000)
+        {
+            tax_rate = 0.1;
+        }
+        else if (gross_salary > 10000 && gross_salary <= 25000)
+        {
+            tax_rate = 0.15;
+        }
+        else if (gross_salary > 25000 && gross_salary <= 50000)
+        {
+            tax_rate = 0.2;
+        }
+        else if (gross_salary > 50000 && gross_salary <= 100000)
+        {
+            tax_rate = 0.25;
+        }
+        else if (gross_salary > 100000)
+        {
+            tax_rate = 0.3;
+        }
+
+        tax_deduction = gross_salary * tax_rate;
+        pension = gross_salary * pension_rate;
+        net_salary = gross_salary - pension - tax_deduction;
+    }
+    else if (worker_type == 2)
+    {
+        // --- LABORER SECTION ---
+        cout << "Enter the number of hours worked: ";
+        cin >> worked_hr;
+        cout << "Enter the hourly rate: ";
+        cin >> hourly_rate;
+
+        // Check for punishment/damage first
+        cout << "Did the laborer damage any machinery? (1 for Yes, 0 for No): ";
+        cin >> has_damage;
+
+        if (has_damage == 1)
+        {
+            cout << "Enter the penalty amount: ";
+            cin >> penalty;
+            bonus_payment = 0; // Cannot receive a bonus if penalized
+        }
+        else
+        {
+            penalty = 0;
+            // Only ask about bonus if there is no punishment
+            cout << "Does the laborer have a bonus? (1 for Yes, 0 for No): ";
+            cin >> has_bonus;
+
+            if (has_bonus == 1)
+            {
+                cout << "Enter the bonus amount: ";
+                cin >> bonus_payment;
+            }
+            else
+            {
+                bonus_payment = 0;
+            }
+        }
+
+        // Laborers have no tax or pension
+        tax_deduction = 0;
+        pension = 0;
+
+        gross_salary = (worked_hr * hourly_rate) + bonus_payment;
+        net_salary = gross_salary - penalty;
+    }
+    else
+    {
+        cout << "Invalid worker type!" << endl;
+        return 0;
+    }
+
+    // Step 2: Output menu
+    cout << "\nChoose which you want to see:" << endl
+         << "1 for all" << endl
+         << "2 for gross payment" << endl
+         << "3 for pension" << endl
+         << "4 for bonus payment" << endl
+         << "5 for tax deduction" << endl
+         << "6 for penalty" << endl
+         << "7 for net salary" << endl;
+    cin >> choose;
+
+    switch (choose)
+    {
+    case 1:
+        cout << "Gross Salary: " << gross_salary << endl;
+        cout << "Bonus Payment: " << bonus_payment << endl;
+        cout << "Penalty: " << penalty << endl;
+        cout << "Tax Deduction: " << tax_deduction << endl;
+        cout << "Pension: " << pension << endl;
+        cout << "Net Salary: " << net_salary << endl;
+        break;
+    case 2:
+        cout << "Gross Salary: " << gross_salary << endl;
+        break;
+    case 3:
+        cout << "Pension: " << pension << endl;
+        break;
+    case 4:
+        cout << "Bonus Payment: " << bonus_payment << endl;
+        break;
+    case 5:
+        cout << "Tax Deduction: " << tax_deduction << endl;
+        break;
+    case 6:
+        cout << "Penalty: " << penalty << endl;
+        break;
+    case 7:
+        cout << "Net Salary: " << net_salary << endl;
+        break;
+    default:
+        cout << "Invalid choice!" << endl;
+        break;
+    }
+
+    return 0;
+}
